@@ -2,10 +2,15 @@
 const root = document.documentElement;
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) root.dataset.theme = savedTheme;
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+const syncThemeColor = () =>
+  themeMeta.setAttribute("content", root.dataset.theme === "dark" ? "#0a0c10" : "#fbfaf7");
+syncThemeColor();
 document.getElementById("theme-toggle").addEventListener("click", () => {
   const next = root.dataset.theme === "dark" ? "light" : "dark";
   root.dataset.theme = next;
   localStorage.setItem("theme", next);
+  syncThemeColor();
 });
 
 // ================= Mobile menu =================
@@ -29,7 +34,7 @@ const roles = [
 const roleEl = document.getElementById("role-text");
 if (!reduceMotion) {
   let ri = 0, ci = roles[0].length, deleting = true;
-  (function typeLoop() {
+  function typeLoop() {
     const word = roles[ri];
     if (deleting) {
       ci--;
@@ -45,7 +50,8 @@ if (!reduceMotion) {
     }
     roleEl.textContent = (deleting ? word : roles[ri]).slice(0, ci);
     setTimeout(typeLoop, deleting ? 40 : 75);
-  })();
+  }
+  setTimeout(typeLoop, 2200);
 }
 
 // ================= Network canvas (GNN nod) =================
@@ -57,8 +63,8 @@ const mouse = { x: -9999, y: -9999 };
 function canvasColors() {
   const dark = root.dataset.theme === "dark";
   return {
-    node: dark ? "rgba(34,211,238,0.65)" : "rgba(8,145,178,0.55)",
-    edge: dark ? "34,211,238" : "8,145,178",
+    node: dark ? "rgba(34,211,238,0.65)" : "rgba(14,116,144,0.55)",
+    edge: dark ? "34,211,238" : "14,116,144",
   };
 }
 function initCanvas() {
@@ -111,8 +117,16 @@ function drawNet() {
 }
 if (!reduceMotion) {
   initCanvas();
-  drawNet();
-  window.addEventListener("resize", () => { cancelAnimationFrame(rafId); initCanvas(); drawNet(); });
+  new IntersectionObserver(([e]) => {
+    cancelAnimationFrame(rafId);
+    if (e.isIntersecting) drawNet();
+  }).observe(canvas);
+  let lastW = innerWidth;
+  window.addEventListener("resize", () => {
+    if (innerWidth === lastW) return; // mobile URL-bar height changes
+    lastW = innerWidth;
+    cancelAnimationFrame(rafId); initCanvas(); drawNet();
+  });
   window.addEventListener("mousemove", (e) => {
     const rect = canvas.getBoundingClientRect();
     mouse.x = (e.clientX - rect.left) * devicePixelRatio;
@@ -141,11 +155,28 @@ onScroll();
 // ================= Reveal on scroll =================
 const revealObserver = new IntersectionObserver(
   (entries) => entries.forEach((e) => {
-    if (e.isIntersecting) { e.target.classList.add("visible"); revealObserver.unobserve(e.target); }
+    if (e.isIntersecting) {
+      e.target.classList.add("visible");
+      e.target.addEventListener("transitionend", () => {
+        e.target.classList.remove("reveal");
+        e.target.style.transitionDelay = "";
+      }, { once: true });
+      revealObserver.unobserve(e.target);
+    }
   }),
   { threshold: 0.1 }
 );
-document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+// staggered cascade for sibling groups
+document.querySelectorAll(".reveal").forEach((el) => {
+  const i = [...el.parentElement.children]
+    .filter((c) => c.classList.contains("reveal")).indexOf(el);
+  if (i > 0) el.style.transitionDelay = `${Math.min(i, 6) * 70}ms`;
+});
+if (reduceMotion) {
+  document.querySelectorAll(".reveal").forEach((el) => el.classList.remove("reveal"));
+} else {
+  document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+}
 
 // ================= 3D tilt cards =================
 if (!reduceMotion && matchMedia("(pointer: fine)").matches) {
@@ -164,20 +195,34 @@ if (!reduceMotion && matchMedia("(pointer: fine)").matches) {
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const lightboxCap = document.getElementById("lightbox-cap");
+let lastShot = null;
 document.querySelectorAll(".shot").forEach((fig) => {
+  fig.setAttribute("tabindex", "0");
+  fig.setAttribute("role", "button");
+  fig.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fig.click(); }
+  });
   fig.addEventListener("click", () => {
     lightboxImg.src = fig.dataset.full;
     lightboxImg.alt = fig.querySelector("img").alt;
     lightboxCap.textContent = fig.querySelector("figcaption").textContent;
     lightbox.hidden = false;
     document.body.style.overflow = "hidden";
+    lastShot = fig;
+    document.getElementById("lightbox-close").focus();
   });
 });
 function closeLightbox() {
   lightbox.hidden = true;
   lightboxImg.src = "";
   document.body.style.overflow = "";
+  if (lastShot) lastShot.focus();
 }
+// fade gallery images in as they load
+document.querySelectorAll(".shot img").forEach((img) => {
+  if (img.complete && img.naturalWidth) img.classList.add("loaded");
+  else img.addEventListener("load", () => img.classList.add("loaded"), { once: true });
+});
 document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
 lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
 window.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lightbox.hidden) closeLightbox(); });
