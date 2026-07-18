@@ -160,6 +160,28 @@ if (!reduceMotion && matchMedia("(pointer: fine)").matches) {
   });
 }
 
+// ================= Lightbox =================
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxCap = document.getElementById("lightbox-cap");
+document.querySelectorAll(".shot").forEach((fig) => {
+  fig.addEventListener("click", () => {
+    lightboxImg.src = fig.dataset.full;
+    lightboxImg.alt = fig.querySelector("img").alt;
+    lightboxCap.textContent = fig.querySelector("figcaption").textContent;
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+  });
+});
+function closeLightbox() {
+  lightbox.hidden = true;
+  lightboxImg.src = "";
+  document.body.style.overflow = "";
+}
+document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
+lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+window.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lightbox.hidden) closeLightbox(); });
+
 // ================= Active nav link =================
 const sections = [...document.querySelectorAll("section[id]")];
 const linkFor = {};

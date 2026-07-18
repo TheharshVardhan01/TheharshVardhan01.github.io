@@ -22,7 +22,8 @@
       <a href="#journey"><span>02</span> Journey</a>
       <a href="#stack"><span>03</span> Stack</a>
       <a href="#wins"><span>04</span> Wins</a>
-      <a href="#contact"><span>05</span> Contact</a>
+      <a href="#lens"><span>05</span> Lens</a>
+      <a href="#contact"><span>06</span> Contact</a>
     </nav>
     <div class="nav-actions">
       <button id="theme-toggle" aria-label="Toggle theme">
@@ -40,24 +41,35 @@
     <section class="hero">
       <canvas id="net-canvas" aria-hidden="true"></canvas>
       <div class="hero-inner">
-        <p class="hero-eyebrow mono reveal">// Vadodara, India — open to interesting problems</p>
-        <h1 class="hero-name reveal">
-          <span class="line">HARSH</span>
-          <span class="line accent-line">VARDHAN<span class="cursor-block"></span></span>
-        </h1>
-        <div class="hero-role mono reveal">
-          <span class="role-prefix">&gt;</span>
-          <span id="role-text">computer vision engineer</span><span class="blink">▊</span>
+        <div class="hero-text">
+          <p class="hero-eyebrow mono reveal">// Vadodara, India — open to interesting problems</p>
+          <h1 class="hero-name reveal">
+            <span class="line">HARSH</span>
+            <span class="line accent-line">VARDHAN<span class="cursor-block"></span></span>
+          </h1>
+          <div class="hero-role mono reveal">
+            <span class="role-prefix">&gt;</span>
+            <span id="role-text">computer vision engineer</span><span class="blink">▊</span>
+          </div>
+          <p class="hero-pitch reveal">
+            I teach machines to <b>watch over railways</b> — and build <b>agentic AI</b> that ships.
+            Research intern at <a href="https://cistup.iisc.ac.in/" target="_blank" rel="noopener">IISc Bangalore</a> &amp;
+            <a href="https://www.iitkgp.ac.in/" target="_blank" rel="noopener">IIT Kharagpur</a> ·
+            CODS Agentic AI Challenge <b>winner</b> · co-author of
+            <a href="https://arxiv.org/abs/2606.19382" target="_blank" rel="noopener">DynAMO (arXiv)</a> ·
+            B.Tech AI &amp; DS '27.
+          </p>
+          <div class="hero-cta reveal">
+            <a href="#work" class="btn-solid">Explore the work <span>↓</span></a>
+            <a href="#contact" class="btn-line">Say hello</a>
+          </div>
         </div>
-        <p class="hero-pitch reveal">
-          I teach machines to <b>watch over railways</b> — and build <b>agentic AI</b> that ships.
-          Research intern at <a href="https://cistup.iisc.ac.in/" target="_blank" rel="noopener">IISc Bangalore</a> &amp;
-          <a href="https://www.iitkgp.ac.in/" target="_blank" rel="noopener">IIT Kharagpur</a> ·
-          CODS Agentic AI Challenge <b>winner</b> · B.Tech AI &amp; DS '27.
-        </p>
-        <div class="hero-cta reveal">
-          <a href="#work" class="btn-solid">Explore the work <span>↓</span></a>
-          <a href="#contact" class="btn-line">Say hello</a>
+        <div class="hero-photo reveal" aria-hidden="false">
+          <div class="photo-frame">
+            <img src="assets/harsh.jpg" alt="Harsh Vardhan" loading="eager" />
+            <div class="photo-signal"><i></i><i></i><i></i></div>
+            <span class="photo-caption mono">harsh@field // IISc campus</span>
+          </div>
         </div>
       </div>
       <div class="hero-ticker" aria-hidden="true">
@@ -140,7 +152,31 @@
             <div class="chips mono"><span>Agents</span><span>Python</span></div>
             <div class="work-num" aria-hidden="true">007</div>
           </article>
+
+          <article class="work-card tilt reveal" data-glow>
+            <div class="work-tag mono">🏍️ road safety</div>
+            <h3>ANPR + Helmet Violation System</h3>
+            <p>Real-time rider detection, helmet check and number-plate OCR — when a helmetless rider is spotted,
+            the system crops the evidence, reads the plate, and auto-emails a violation log with time and location.</p>
+            <div class="chips mono"><span>YOLO</span><span>OCR</span><span>OpenCV</span><span>Automation</span></div>
+            <div class="work-num" aria-hidden="true">008</div>
+          </article>
         </div>
+
+        <aside class="paper-strip reveal" data-glow>
+          <div class="paper-tag mono">📄 preprint — arXiv:2606.19382</div>
+          <div class="paper-body">
+            <h3>DynAMO: Dynamic Asset Management Orchestration via Topological Multi-Agent Scheduling</h3>
+            <p class="paper-authors mono">K. Kushwaha · V. V. Bansode · <b>H. Vardhan</b> · D. C. Patel</p>
+            <p>A deployment-ready plan-then-execute engine for industrial asset lifecycles — verifiable workflow
+            graphs with dependency-aware parallel execution, cutting end-to-end latency by a median 1.6× on the
+            AssetOpsBench benchmark.</p>
+          </div>
+          <div class="paper-links">
+            <a class="btn-line mono" href="https://arxiv.org/abs/2606.19382" target="_blank" rel="noopener">abs ↗</a>
+            <a class="btn-line mono" href="https://arxiv.org/pdf/2606.19382" target="_blank" rel="noopener">pdf ↗</a>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -151,6 +187,12 @@
           <span class="mono section-no">02</span>
           <h2>The<br /><em>Journey</em></h2>
           <p class="section-sub">Every stop on the line so far.</p>
+          <div class="affil-strip" aria-label="Current affiliations">
+            <span class="mono affil-label">currently at</span>
+            <span class="affil-logo"><img src="assets/logos/iisc.png" alt="IISc Bangalore" loading="lazy" /></span>
+            <span class="affil-logo"><img src="assets/logos/cistup.png" alt="CiSTUP" loading="lazy" /></span>
+            <span class="affil-logo"><img src="assets/logos/vistalab.png" alt="VISTA Lab" loading="lazy" /></span>
+          </div>
         </div>
         <div class="rail">
           <div class="rail-track" aria-hidden="true"><div class="rail-train" id="rail-train">🚆</div></div>
@@ -240,6 +282,56 @@
       </div>
     </section>
 
+    <!-- ================= LENS (hobbies) ================= -->
+    <section class="section" id="lens">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="mono section-no">05</span>
+          <h2>Through<br /><em>the Lens</em></h2>
+          <p class="section-sub">When I'm not training models, I'm out with a camera — chasing birds, light,
+          and new places. Photography and travel keep my eyes calibrated.</p>
+        </div>
+        <div class="gallery">
+          <figure class="shot reveal" data-full="assets/photos/purple-hour.jpg">
+            <img src="assets/photos/purple-hour.jpg" alt="Purple-hour hills over a river" loading="lazy" />
+            <figcaption class="mono">purple hour · narmada hills</figcaption>
+          </figure>
+          <figure class="shot tall reveal" data-full="assets/photos/pond-heron.jpg">
+            <img src="assets/photos/pond-heron.jpg" alt="Pond heron in tall grass" loading="lazy" />
+            <figcaption class="mono">pond heron · campus wetland</figcaption>
+          </figure>
+          <figure class="shot reveal" data-full="assets/photos/statue-of-unity.jpg">
+            <img src="assets/photos/statue-of-unity.jpg" alt="Statue of Unity at sunset" loading="lazy" />
+            <figcaption class="mono">statue of unity · dusk</figcaption>
+          </figure>
+          <figure class="shot reveal" data-full="assets/photos/squirrel.jpg">
+            <img src="assets/photos/squirrel.jpg" alt="Palm squirrel descending a tree" loading="lazy" />
+            <figcaption class="mono">five-striped local · head first</figcaption>
+          </figure>
+          <figure class="shot tall reveal" data-full="assets/photos/moon-crows.jpg">
+            <img src="assets/photos/moon-crows.jpg" alt="Moon behind a crow-filled tree, black and white" loading="lazy" />
+            <figcaption class="mono">moon &amp; crows · b/w</figcaption>
+          </figure>
+          <figure class="shot reveal" data-full="assets/photos/takeoff.jpg">
+            <img src="assets/photos/takeoff.jpg" alt="Airliner climbing with two birds alongside" loading="lazy" />
+            <figcaption class="mono">three fliers · one frame</figcaption>
+          </figure>
+          <figure class="shot tall reveal" data-full="assets/photos/sunburst.jpg">
+            <img src="assets/photos/sunburst.jpg" alt="Sunburst through forest canopy" loading="lazy" />
+            <figcaption class="mono">canopy sunburst</figcaption>
+          </figure>
+          <figure class="shot reveal" data-full="assets/photos/wildflowers.jpg">
+            <img src="assets/photos/wildflowers.jpg" alt="Wildflowers macro against bokeh" loading="lazy" />
+            <figcaption class="mono">wildflowers · macro</figcaption>
+          </figure>
+          <figure class="shot reveal" data-full="assets/photos/misty-hills.jpg">
+            <img src="assets/photos/misty-hills.jpg" alt="Misty green hills over a lake" loading="lazy" />
+            <figcaption class="mono">misty hills · monsoon</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= CONTACT ================= -->
     <section class="section contact" id="contact">
       <div class="wrap">
@@ -261,6 +353,12 @@
     <span class="footer-status"><i class="dot-live"></i> currently: IISc · IIT KGP · GSV '27</span>
     <span>vadodara, in</span>
   </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close mono" id="lightbox-close" aria-label="Close">esc ✕</button>
+    <img id="lightbox-img" src="" alt="" />
+    <p class="lightbox-cap mono" id="lightbox-cap"></p>
+  </div>
 
   <script src="script.js"></script>
 </body>
