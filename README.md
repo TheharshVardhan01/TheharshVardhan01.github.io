@@ -1,6 +1,6 @@
-# Harsh Vardhan — Portfolio
+# Harsh Vardhan | Portfolio
 
-Personal portfolio site. Plain HTML/CSS/JS — no build step, no dependencies.
+Personal portfolio site. Plain HTML/CSS/JS, no build step, no dependencies.
 
 ## Preview locally
 
@@ -18,9 +18,9 @@ Then open http://localhost:8000 (or just double-click `index.html`).
    git remote add origin https://github.com/<your-username>/<your-username>.github.io.git
    git push -u origin main
    ```
-3. Wait a minute — your site is live at `https://<your-username>.github.io`.
+3. Wait a minute, then your site is live at `https://<your-username>.github.io`.
 
 ## Editing content
 
-Everything lives in `index.html` — sections are marked with `<!-- ===== NAME ===== -->` comments.
+Everything lives in `index.html`. Sections are marked with `<!-- ===== NAME ===== -->` comments.
 Colors/fonts are CSS variables at the top of `styles.css` (light theme in `:root`, dark theme in `:root[data-theme="dark"]`).
