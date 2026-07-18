@@ -1,257 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harsh Vardhan — AI &amp; Data Science</title>
-  <meta name="description" content="Harsh Vardhan — AI & Data Science undergraduate at Gati Shakti Vishwavidyalaya. Computer vision, railway AI systems, agentic AI." />
+  <title>Harsh Vardhan — AI Engineer</title>
+  <meta name="description" content="Harsh Vardhan — AI Engineer. Computer vision for railways, agentic AI, graph neural networks. IISc CiSTUP · IIT Kharagpur · Indian Railways." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚦</text></svg>" />
 </head>
 <body>
+  <div class="scroll-progress"><div class="scroll-progress-bar" id="progress-bar"></div></div>
+  <div class="grain" aria-hidden="true"></div>
+
   <header class="nav">
-    <div class="nav-inner">
-      <a href="#top" class="nav-name">Harsh <span>Vardhan</span></a>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="nav-actions">
-        <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-        </button>
-        <button id="menu-toggle" aria-label="Menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        </button>
-      </div>
+    <a href="#top" class="nav-logo"><span class="logo-signal"><i></i><i></i><i></i></span>HV<span class="blink">_</span></a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#work"><span>01</span> Work</a>
+      <a href="#journey"><span>02</span> Journey</a>
+      <a href="#stack"><span>03</span> Stack</a>
+      <a href="#wins"><span>04</span> Wins</a>
+      <a href="#contact"><span>05</span> Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>
+        <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <button id="menu-toggle" aria-label="Menu">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </div>
   </header>
 
   <main id="top">
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="about">
-      <div class="container">
-        <p class="hero-kicker reveal">AI Engineer · B.Tech AI &amp; DS '27</p>
-        <h1 class="hero-title reveal">Harsh Vardhan</h1>
-        <p class="hero-tagline reveal">I build <em>computer-vision systems</em> that watch over railways, and <em>agentic AI</em> that gets real work done.</p>
-        <p class="hero-bio reveal">
-          I'm an AI Engineer and Artificial Intelligence &amp; Data Science undergraduate at
-          <a href="https://gsv.ac.in" target="_blank" rel="noopener">Gati Shakti Vishwavidyalaya</a>, Vadodara —
-          currently a research intern at <strong>CiSTUP, IISc Bangalore</strong> (intelligent traffic surveillance)
-          and <strong>IIT Kharagpur</strong> (railway network analysis with graph neural networks).
-          I've trained object-detection pipelines from scratch for Indian Railways and was recognized for
-          excellence in Agentic AI at the CODS-COMAD Conference. I like problems where models have to
-          survive contact with the real world.
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <canvas id="net-canvas" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <p class="hero-eyebrow mono reveal">// Vadodara, India — open to interesting problems</p>
+        <h1 class="hero-name reveal">
+          <span class="line">HARSH</span>
+          <span class="line accent-line">VARDHAN<span class="cursor-block"></span></span>
+        </h1>
+        <div class="hero-role mono reveal">
+          <span class="role-prefix">&gt;</span>
+          <span id="role-text">computer vision engineer</span><span class="blink">▊</span>
+        </div>
+        <p class="hero-pitch reveal">
+          I teach machines to <b>watch over railways</b> — and build <b>agentic AI</b> that ships.
+          Research intern at <a href="https://cistup.iisc.ac.in/" target="_blank" rel="noopener">IISc Bangalore</a> &amp;
+          <a href="https://www.iitkgp.ac.in/" target="_blank" rel="noopener">IIT Kharagpur</a> ·
+          CODS Agentic AI Challenge <b>winner</b> · B.Tech AI &amp; DS '27.
         </p>
         <div class="hero-cta reveal">
-          <a class="btn btn-primary" href="#projects">See my work</a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          <a href="#work" class="btn-solid">Explore the work <span>↓</span></a>
+          <a href="#contact" class="btn-line">Say hello</a>
         </div>
-        <div class="hero-stats reveal">
-          <div class="stat"><span class="stat-num" data-count="2">0</span><span class="stat-label">Research labs (IISc · IIT KGP)</span></div>
-          <div class="stat"><span class="stat-num" data-count="5">0</span><span class="stat-label">Internships</span></div>
-          <div class="stat"><span class="stat-num" data-count="8">0</span><span class="stat-label">Projects shipped</span></div>
+      </div>
+      <div class="hero-ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>COMPUTER VISION ✦ AGENTIC AI ✦ GRAPH NEURAL NETWORKS ✦ RAG SYSTEMS ✦ EDGE DEPLOYMENT ✦ RAILWAY AI ✦ LLM EVALUATION ✦ </span>
+          <span>COMPUTER VISION ✦ AGENTIC AI ✦ GRAPH NEURAL NETWORKS ✦ RAG SYSTEMS ✦ EDGE DEPLOYMENT ✦ RAILWAY AI ✦ LLM EVALUATION ✦ </span>
         </div>
       </div>
     </section>
 
-    <!-- ===== EXPERIENCE ===== -->
-    <section class="section" id="experience">
-      <div class="container">
-        <h2 class="section-title reveal"><span class="section-index">01</span> Experience</h2>
-        <div class="timeline">
-          <article class="timeline-item reveal">
-            <div class="timeline-meta">2026 – Present</div>
-            <div class="timeline-body">
-              <h3>Research Intern · CiSTUP, Indian Institute of Science (IISc), Bangalore</h3>
-              <p>Researching computer vision for intelligent traffic surveillance — vehicle detection, tracking,
-              and traffic behavior analysis over large-scale video datasets for real-time monitoring, incident
-              detection, and smart-mobility applications.</p>
-              <div class="tags"><span>Computer Vision</span><span>Object Tracking</span><span>Deep Learning</span></div>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <div class="timeline-meta">2026 – Present</div>
-            <div class="timeline-body">
-              <h3>Research Intern · Indian Institute of Technology (IIT) Kharagpur</h3>
-              <p>Railway network analysis with Graph Neural Networks and complex network science: graph-based
-              representations of railway systems, centrality and community detection, and predictive modeling of
-              node importance and connectivity patterns.</p>
-              <div class="tags"><span>GNNs</span><span>Network Science</span><span>Graph Learning</span></div>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <div class="timeline-meta">2023 – Present</div>
-            <div class="timeline-body">
-              <h3>Freelancer · Scale AI <span class="muted">(MWF Team)</span></h3>
-              <p>Contributing to the development and evaluation of large language models — designing computational
-              workflows, multi-step reasoning tasks, and LLM evaluation pipelines.</p>
-              <div class="tags"><span>LLM Evaluation</span><span>Prompt Engineering</span><span>Reasoning</span></div>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <div class="timeline-meta">May – Jul 2025</div>
-            <div class="timeline-body">
-              <h3>AI/ML Intern · Indian Railways, Vadodara Division</h3>
-              <p>Built a real-world computer-vision anomaly-detection system for railway stations end-to-end:
-              on-site video data collection, frame extraction, annotation, and fine-tuning of a YOLOv8x
-              object-detection model for reliable detection under live operational conditions.</p>
-              <div class="tags"><span>YOLOv8</span><span>TensorFlow</span><span>OpenCV</span><span>Data Annotation</span></div>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <div class="timeline-meta">Apr – Jul 2025</div>
-            <div class="timeline-body">
-              <h3>Project Intern · NK3 Solutions <span class="muted">(with La Terre, for RITES Ltd.)</span></h3>
-              <p>Applied AI/ML to railway track defect assessment on the Kolkata Metro Blue Line — defect
-              interdependency analysis across 21 sections using Bayesian networks and clustering, defect scoring,
-              and data-driven visualization. Honored with a stipend for this work.</p>
-              <div class="tags"><span>Bayesian Networks</span><span>Clustering</span><span>Data Analytics</span></div>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <div class="timeline-meta">May – Jun 2024</div>
-            <div class="timeline-body">
-              <h3>Summer Intern · Indian Railways, DRM Vadodara</h3>
-              <p>Studied railway signaling and telecommunication systems, and observed operational-level
-              scheduling, traffic control, and real-time train-flow management within the division.</p>
-              <div class="tags"><span>Signaling</span><span>Telecom</span><span>Operations</span></div>
-            </div>
-          </article>
+    <!-- ================= WORK ================= -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="mono section-no">01</span>
+          <h2>Selected<br /><em>Work</em></h2>
+          <p class="section-sub">Systems that survived contact with the real world.</p>
         </div>
-      </div>
-    </section>
+        <div class="work-grid">
+          <article class="work-card big tilt reveal" data-glow>
+            <div class="work-tag mono">🚉 flagship — Indian Railways</div>
+            <h3>Real-Time Railway Anomaly Detection</h3>
+            <p>End-to-end CV system watching live station feeds for platform intrusions, yellow-line violations
+            and track obstructions. I collected the video data on real platforms, annotated it, fine-tuned YOLOv8x,
+            and squeezed it onto the edge with TensorRT + DeepStream — with ROI-based automated alerts.</p>
+            <div class="chips mono"><span>YOLOv8x</span><span>TensorRT</span><span>DeepStream</span><span>OpenCV</span></div>
+            <div class="work-num" aria-hidden="true">001</div>
+          </article>
 
-    <!-- ===== PROJECTS ===== -->
-    <section class="section" id="projects">
-      <div class="container">
-        <h2 class="section-title reveal"><span class="section-index">02</span> Selected Projects</h2>
-        <div class="project-grid">
-          <article class="card featured reveal">
-            <div class="card-top"><span class="card-emoji">🚉</span><span class="card-badge">Flagship</span></div>
-            <h3>Real-Time Railway Anomaly &amp; Train Detection</h3>
-            <p>Real-time CV framework for railway safety: multi-class detection of platform intrusions, yellow-line
-            violations, and track obstructions. Custom dataset built and annotated from Indian railway stations;
-            edge-optimized inference with TensorRT and DeepStream, with ROI-based automated alerts.</p>
-            <div class="tags"><span>TensorFlow</span><span>TensorRT</span><span>DeepStream</span><span>Ultralytics</span></div>
+          <article class="work-card tilt reveal" data-glow>
+            <div class="work-tag mono">🕸️ research — IIT Kharagpur</div>
+            <h3>Railway Networks × GNNs</h3>
+            <p>Modeling entire railway systems as graphs — centrality, community detection, and graph learning
+            to predict node importance and connectivity behavior.</p>
+            <div class="chips mono"><span>GNNs</span><span>NetworkX</span><span>Graph Learning</span></div>
+            <div class="work-num" aria-hidden="true">002</div>
           </article>
-          <article class="card reveal">
-            <div class="card-top"><span class="card-emoji">🚦</span></div>
-            <h3>Smart Traffic Management System</h3>
-            <p>CV-driven adaptive traffic control: real-time vehicle density estimation with OpenCV + YOLO,
-            signal optimization, emergency-vehicle green corridors, and a live Streamlit + Firebase dashboard.</p>
-            <div class="tags"><span>YOLO</span><span>Streamlit</span><span>Firebase</span></div>
+
+          <article class="work-card tilt reveal" data-glow>
+            <div class="work-tag mono">🛣️ research — CiSTUP, IISc</div>
+            <h3>Intelligent Traffic Surveillance</h3>
+            <p>Vehicle detection, tracking and behavior analysis over large-scale video for real-time incident
+            detection and smart mobility.</p>
+            <div class="chips mono"><span>Detection</span><span>Tracking</span><span>Deep Learning</span></div>
+            <div class="work-num" aria-hidden="true">003</div>
           </article>
-          <article class="card reveal">
-            <div class="card-top"><span class="card-emoji">📚</span></div>
-            <h3>RAGvisor — PDF / Web Q&amp;A</h3>
-            <p>Retrieval-augmented generation app for question answering over PDFs and web content, combining
-            document retrieval with LLMs for context-aware answers in a Streamlit interface.</p>
-            <div class="tags"><span>RAG</span><span>LangChain</span><span>FAISS</span><span>LLMs</span></div>
+
+          <article class="work-card tilt reveal" data-glow>
+            <div class="work-tag mono">🏆 winner — CODS 2025</div>
+            <h3>Agentic AI on AssetOpsBench</h3>
+            <p>Fault-tolerant agentic system for realistic industrial task execution — won the CODS Agentic AI
+            Challenge, presented at the 13th CODS-COMAD International Conference.</p>
+            <div class="chips mono"><span>Agents</span><span>Fault Tolerance</span><span>LLMs</span></div>
+            <div class="work-num" aria-hidden="true">004</div>
           </article>
-          <article class="card reveal">
-            <div class="card-top"><span class="card-emoji">🌾</span></div>
-            <h3>AI_Krishidoot — Agentic AI for Agriculture</h3>
-            <p>Agentic AI assistant supporting farmers with hyperlocal decisions — crop advice, weather, and more —
-            designed for usability and simplicity for rural users.</p>
-            <div class="tags"><span>Agentic AI</span><span>Python</span></div>
+
+          <article class="work-card tilt reveal" data-glow>
+            <div class="work-tag mono">📚 genai</div>
+            <h3>RAGvisor — Document Q&amp;A</h3>
+            <p>Retrieval-augmented generation over PDFs and the web: retriever + generator pipeline with
+            LangChain and FAISS, wrapped in a clean Streamlit UI.</p>
+            <div class="chips mono"><span>RAG</span><span>LangChain</span><span>FAISS</span></div>
+            <div class="work-num" aria-hidden="true">005</div>
           </article>
-          <article class="card reveal">
-            <div class="card-top"><span class="card-emoji">🏍️</span></div>
-            <h3>ANPR for Two-Wheeler Safety</h3>
-            <p>Automatic number-plate recognition system that detects two-wheelers, reads plates, and triggers
-            automated email warnings for safety compliance in real time.</p>
-            <div class="tags"><span>OpenCV</span><span>OCR</span></div>
+
+          <article class="work-card tilt reveal" data-glow>
+            <div class="work-tag mono">🚦 civic tech</div>
+            <h3>Smart Traffic Management</h3>
+            <p>Adaptive signal control from live vehicle density, emergency-vehicle green corridors, and a
+            real-time Firebase-backed dashboard.</p>
+            <div class="chips mono"><span>YOLO</span><span>Streamlit</span><span>Firebase</span></div>
+            <div class="work-num" aria-hidden="true">006</div>
           </article>
-          <article class="card reveal">
-            <div class="card-top"><span class="card-emoji">♟️</span></div>
-            <h3>Games &amp; More</h3>
-            <p>A fully functional chess game in Java/Swing, a multi-level 2D platformer in C++/SDL, and a
-            hand-gesture volume controller with OpenCV + MediaPipe.</p>
-            <div class="tags"><span>Java</span><span>C++</span><span>MediaPipe</span></div>
+
+          <article class="work-card tilt reveal" data-glow>
+            <div class="work-tag mono">🌾 agentic ai</div>
+            <h3>AI Krishidoot</h3>
+            <p>Agent-based decision support for farmers — hyperlocal crop advice and weather, designed for
+            simplicity in rural use.</p>
+            <div class="chips mono"><span>Agents</span><span>Python</span></div>
+            <div class="work-num" aria-hidden="true">007</div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== SKILLS ===== -->
-    <section class="section" id="skills">
-      <div class="container">
-        <h2 class="section-title reveal"><span class="section-index">03</span> Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-group reveal">
-            <h4>AI / ML</h4>
-            <div class="tags lg"><span>Machine Learning</span><span>Deep Learning</span><span>Computer Vision</span><span>Generative AI</span><span>RAG</span><span>Agentic AI</span><span>LLM Evaluation</span><span>Prompt Engineering</span><span>Anomaly Detection</span></div>
-          </div>
-          <div class="skill-group reveal">
-            <h4>Frameworks &amp; Libraries</h4>
-            <div class="tags lg"><span>TensorFlow</span><span>PyTorch</span><span>OpenCV</span><span>Scikit-learn</span><span>LangChain</span><span>FAISS</span><span>MediaPipe</span><span>TensorRT</span><span>DeepStream</span></div>
-          </div>
-          <div class="skill-group reveal">
-            <h4>Languages &amp; Data</h4>
-            <div class="tags lg"><span>Python</span><span>SQL</span><span>C++</span><span>R</span><span>Pandas</span><span>NumPy</span><span>SciPy</span><span>Statsmodels</span><span>Power BI</span></div>
-          </div>
-          <div class="skill-group reveal">
-            <h4>Dev &amp; Deployment</h4>
-            <div class="tags lg"><span>Docker</span><span>Git</span><span>FastAPI</span><span>Streamlit</span><span>Hugging Face</span><span>Linux</span><span>REST APIs</span><span>MLOps</span></div>
-          </div>
+    <!-- ================= JOURNEY (railway timeline) ================= -->
+    <section class="section" id="journey">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="mono section-no">02</span>
+          <h2>The<br /><em>Journey</em></h2>
+          <p class="section-sub">Every stop on the line so far.</p>
+        </div>
+        <div class="rail">
+          <div class="rail-track" aria-hidden="true"><div class="rail-train" id="rail-train">🚆</div></div>
+          <article class="station reveal">
+            <div class="station-dot green"></div>
+            <div class="station-meta mono">2026 — present</div>
+            <div class="station-body">
+              <h3>Research Intern · CiSTUP, IISc Bangalore</h3>
+              <p>Computer vision for intelligent traffic surveillance — detection, tracking, and behavior analysis on large-scale video.</p>
+            </div>
+          </article>
+          <article class="station reveal">
+            <div class="station-dot green"></div>
+            <div class="station-meta mono">2026 — present</div>
+            <div class="station-body">
+              <h3>Research Intern · IIT Kharagpur</h3>
+              <p>Railway network analysis with graph neural networks and complex network science.</p>
+            </div>
+          </article>
+          <article class="station reveal">
+            <div class="station-dot amber"></div>
+            <div class="station-meta mono">2023 — present</div>
+            <div class="station-body">
+              <h3>Freelancer · Scale AI (MWF team)</h3>
+              <p>Developing and evaluating large language models — reasoning workflows and LLM evaluation.</p>
+            </div>
+          </article>
+          <article class="station reveal">
+            <div class="station-dot amber"></div>
+            <div class="station-meta mono">may — jul 2025</div>
+            <div class="station-body">
+              <h3>AI/ML Intern · Indian Railways, Vadodara</h3>
+              <p>Built the real-time station anomaly-detection system from scratch: data collection on platforms → annotation → YOLOv8x fine-tuning → edge deployment.</p>
+            </div>
+          </article>
+          <article class="station reveal">
+            <div class="station-dot amber"></div>
+            <div class="station-meta mono">2025</div>
+            <div class="station-body">
+              <h3>Data Analytics Intern · Kolkata Metro &amp; NK3 Solutions</h3>
+              <p>Statistical analysis of track-defect data across 21 metro sections — EDA, Bayesian networks, clustering. Honored with a stipend.</p>
+            </div>
+          </article>
+          <article class="station reveal">
+            <div class="station-dot red"></div>
+            <div class="station-meta mono">2023 — 2027</div>
+            <div class="station-body">
+              <h3>B.Tech AI &amp; Data Science · Gati Shakti Vishwavidyalaya</h3>
+              <p>India's railway university, Vadodara. Where the trains and the tensors met.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== ACHIEVEMENTS ===== -->
-    <section class="section" id="achievements">
-      <div class="container">
-        <h2 class="section-title reveal"><span class="section-index">04</span> Achievements</h2>
-        <ul class="achievements">
-          <li class="reveal"><span class="ach-icon">🏆</span><div><strong>Winner — CODS Agentic AI Challenge, 2025.</strong> Built a robust agentic AI system on AssetOpsBench for industrial task execution with fault tolerance; recognized for excellence in Agentic AI and invited to present at the 13th CODS-COMAD International Conference.</div></li>
-          <li class="reveal"><span class="ach-icon">🎓</span><div><strong>Finalist — AIRAWAT Mobility Hackathon, IISc Bangalore.</strong> AI-driven computer-vision solutions for real-world mobility challenges.</div></li>
-          <li class="reveal"><span class="ach-icon">⛓️</span><div><strong>Finalist — DoraHacks Blockchain Competition (Asia level, 2025).</strong> Decentralized AI solution for transparent data management.</div></li>
-          <li class="reveal"><span class="ach-icon">🚇</span><div><strong>Stipend award — Kolkata Metro track analysis.</strong> Honored for project work on track-defect assessment for the Blue Line.</div></li>
-          <li class="reveal"><span class="ach-icon">✈️</span><div><strong>Organizer — AI &amp; ML workshops for Air Force officers, 2025</strong>, and Domain Head of the Media &amp; Tech Club at GSV.</div></li>
-        </ul>
+    <!-- ================= STACK ================= -->
+    <section class="section" id="stack">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="mono section-no">03</span>
+          <h2>The<br /><em>Stack</em></h2>
+          <p class="section-sub">Tools I reach for, ordered by muscle memory.</p>
+        </div>
+      </div>
+      <div class="stack-marquees reveal">
+        <div class="marquee m-left mono"><div class="marquee-track"><span>Python ⚡ SQL ⚡ C++ ⚡ R ⚡ PyTorch ⚡ TensorFlow ⚡ OpenCV ⚡ scikit-learn ⚡ SciPy ⚡ Statsmodels ⚡ </span><span>Python ⚡ SQL ⚡ C++ ⚡ R ⚡ PyTorch ⚡ TensorFlow ⚡ OpenCV ⚡ scikit-learn ⚡ SciPy ⚡ Statsmodels ⚡ </span></div></div>
+        <div class="marquee m-right mono"><div class="marquee-track"><span>LangChain ⚡ RAG ⚡ FAISS ⚡ Vector DBs ⚡ Prompt Engineering ⚡ LLM Evaluation ⚡ Agentic AI ⚡ Anomaly Detection ⚡ </span><span>LangChain ⚡ RAG ⚡ FAISS ⚡ Vector DBs ⚡ Prompt Engineering ⚡ LLM Evaluation ⚡ Agentic AI ⚡ Anomaly Detection ⚡ </span></div></div>
+        <div class="marquee m-left slow mono"><div class="marquee-track"><span>Docker ⚡ TensorRT ⚡ NVIDIA DeepStream ⚡ FastAPI ⚡ Git ⚡ Linux ⚡ Power BI ⚡ Streamlit ⚡ Feature Engineering ⚡ </span><span>Docker ⚡ TensorRT ⚡ NVIDIA DeepStream ⚡ FastAPI ⚡ Git ⚡ Linux ⚡ Power BI ⚡ Streamlit ⚡ Feature Engineering ⚡ </span></div></div>
       </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
+    <!-- ================= WINS ================= -->
+    <section class="section" id="wins">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="mono section-no">04</span>
+          <h2>Score<br /><em>board</em></h2>
+          <p class="section-sub">Receipts.</p>
+        </div>
+        <ol class="wins-list">
+          <li class="reveal"><span class="win-rank mono">W</span><div><h3>CODS Agentic AI Challenge — Winner, 2025</h3><p>Robust agentic system on AssetOpsBench; invited talk at the 13th CODS-COMAD International Conference.</p></div></li>
+          <li class="reveal"><span class="win-rank mono">F</span><div><h3>AIRAWAT Mobility Hackathon — Finalist</h3><p>National-level AI for mobility at IISc Bangalore.</p></div></li>
+          <li class="reveal"><span class="win-rank mono">F</span><div><h3>DoraHacks Blockchain Competition — Asia Finalist</h3><p>Decentralized AI for transparent data management.</p></div></li>
+          <li class="reveal"><span class="win-rank mono">₹</span><div><h3>Kolkata Metro Stipend Award</h3><p>Honored for the Blue Line track-defect analysis work.</p></div></li>
+          <li class="reveal"><span class="win-rank mono">✈</span><div><h3>AI/ML Workshops for Air Force Officers</h3><p>Organized and coordinated technical sessions, 2025.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
     <section class="section contact" id="contact">
-      <div class="container">
-        <h2 class="section-title reveal"><span class="section-index">05</span> Contact</h2>
-        <p class="contact-lede reveal">I'm open to research collaborations, internships, and interesting problems — especially in computer vision and applied AI. The fastest way to reach me:</p>
-        <div class="contact-links reveal">
-          <a class="contact-link" href="mailto:theharshvardhan2@gmail.com">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-            theharshvardhan2@gmail.com
-          </a>
-          <a class="contact-link" href="https://www.linkedin.com/in/theharsh-vardhan-/" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
-            LinkedIn
-          </a>
-          <a class="contact-link" href="https://github.com/TheharshVardhan01" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18a11 11 0 0 1 5.76 0c2.19-1.49 3.15-1.18 3.15-1.18.63 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.66.41.35.77 1.05.77 2.12v3.15c0 .3.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-            GitHub
-          </a>
-          <a class="contact-link" href="tel:+919536861298">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-            +91 95368 61298
-          </a>
+      <div class="wrap">
+        <p class="mono contact-eyebrow reveal">// next stop</p>
+        <h2 class="contact-big reveal">Let's build<br /><em>something real.</em></h2>
+        <p class="contact-sub reveal">Research collabs, internships, or a hard CV/agents problem — my inbox is open.</p>
+        <div class="contact-row reveal">
+          <a class="pill" href="mailto:theharshvardhan2@gmail.com">✉ theharshvardhan2@gmail.com</a>
+          <a class="pill" href="https://www.linkedin.com/in/theharsh-vardhan-/" target="_blank" rel="noopener">in/ theharsh-vardhan-</a>
+          <a class="pill" href="https://github.com/TheharshVardhan01" target="_blank" rel="noopener">gh/ TheharshVardhan01</a>
+          <a class="pill" href="tel:+919536861298">☎ +91 95368 61298</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 Harsh Vardhan · Vadodara, India · Built with plain HTML/CSS/JS</p>
-    </div>
+  <footer class="footer mono">
+    <span>© 2026 Harsh Vardhan</span>
+    <span class="footer-status"><i class="dot-live"></i> currently: IISc · IIT KGP · GSV '27</span>
+    <span>vadodara, in</span>
   </footer>
 
   <script src="script.js"></script>
